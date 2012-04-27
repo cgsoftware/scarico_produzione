@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        
+        
+         
+        <record id="view_statistica_produzione" model="ir.ui.view">
+            <field name="name">Stampa Scarichi di produzione</field>
+            <field name="model">parcalcolo.scarichi</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                    <form string="Parametri di Stampa"  >
+                        <field name="dadata" colspan="4" />
+                        <field name="adata" colspan="4"/>
+                        <field name="tipo_Stampa" colspan="4"/>
+                        <group>    
+                            <field name="categoria_ids" colspan="4" mode="tree"  nolabel="1" widget="one2many_list" width="300" height="200">
+                                <tree string="Categorie" editable="bottom">
+                                    <field  name="categoria" />
+                                </tree>
+                            </field>
+                         </group>
+                        <newline/>
+                        
+                        <separator colspan="4"/>
+                        <group colspan="2" col="4">
+                            <button special="cancel" string="Cancel"  icon="gtk-cancel"/>
+                            <button name="crea_temp" string="Calcola" type="object" icon="gtk-print"/>
+                        </group>
+                    </form>
+                
+            </field>
+        </record>
+        
+
+            
+          <act_window name='action_stampa_scarichi'
+              res_model='parcalcolo.scarichi'
+	    			
+	    			view_mode='form'
+	    			target='new'
+	    			key2='client_action_multi'
+	    			id='view_statistica_produzione' /> 
+	    
+        <menuitem action="view_statistica_produzione" 
+		  		  icon = 'STOCK_EXECUTE'
+		          name='Stampa degli scarichi di produzione'
+		          id="menu_stampe_statistica_produzione" 
+		          parent="Reportistica.menu_stampe_produzione"  sequence="1"/>
+            
+            
+        
+        
+    </data>
+</openerp>
+

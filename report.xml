@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<openerp>
+<data >
+	<!-- REPORT SCARICHI DI PRODUZIONE CATEGORIA-->
+	<record id="report_scarico_produzione" model="ir.actions.report.xml">
+        <field name="name">Scarichi di Produzione</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">fiscaldoc.header</field>
+        <field name="report_name">scarico_produzione</field>
+	    <field name="report_rml">scarico_produzione/report/scarico_produzione.jrxml</field>
+        <field name="report_type">pdf</field>
+        <field name="jasper_report">True</field>
+        <field name="jasper_output">pdf</field>
+	</record>
+    
+        <!-- REPORT SCARICHI DI PRODUZIONE MATERIA  -->
+        <record id="report_scarico_produzione_materia" model="ir.actions.report.xml">
+                <field name="name">Scarichi di Produzione Materia</field>
+                <field name="type">ir.actions.report.xml</field>
+                <field name="model">fiscaldoc.header</field>
+                <field name="report_name">scarico_produzione_materia</field>
+                <field name="report_rml">scarico_produzione/report/scarico_produzione_materia.jrxml</field>
+                <field name="report_type">pdf</field>
+                <field name="jasper_report">True</field>
+                <field name="jasper_output">pdf</field>
+        </record>
+	
+	
+
+	
+ </data>
+</openerp>
